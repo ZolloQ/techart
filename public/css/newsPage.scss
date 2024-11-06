@@ -1,0 +1,220 @@
+main{
+  .banner {
+    width: 100%;
+    position: relative;
+    height: 646px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &::after {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #000;
+      opacity: 0.3;
+      content: "";
+      z-index: 2;
+    }
+
+    .banner__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .banner__text {
+      margin: 0 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 30.33px;
+      color: #ffffff;
+      z-index: 3;
+
+      .banner__text-title {
+        font-weight: 600;
+        font-size: 64px;
+      }
+
+      p {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 51.2px;
+      }
+    }
+  }
+
+  .news__card-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #841844;
+    border: 2px solid #841844 ;
+    border-radius: 50px;
+    padding: 16px 40px;
+    width: max-content;
+
+    &:hover {
+      color: #fff;
+      background-color: #841844;
+      border: 2px solid #841844;
+
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+
+
+
+  .news {
+    display: flex;
+    flex-direction: column;
+    padding: 54px 200px 83px 200px;
+    background-color: #ffffff;
+    gap: 60px;
+    h1 {
+      font-weight: 600;
+      font-size: 64px;
+      line-height: 90px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 30px;
+      grid-row-gap: 82px;
+
+      .news__card {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        cursor: pointer;
+
+        .news__card-date {
+          background-color: #ecf2f5;
+          width: 118px;
+          border-radius: 20px;
+          text-align: center;
+          color: #6c6e7b;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 22px;
+          padding: 6px 0;
+        }
+
+        .news__card-content {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          min-height: 185px;
+
+          .news__card-title {
+
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 43px;
+          }
+
+          .news__card-announce {
+            p{
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 160%;
+            }
+          }
+        }
+
+        &:hover {
+          .news__card-content {
+            .news__card-title {
+              color: #841844;
+            }
+          }
+
+          .news__card-btn {
+            color: #fff;
+            background-color: #841844;
+            border: 2px solid #841844;
+
+            img {
+              filter: brightness(0) invert(1);
+            }
+          }
+        }
+      }
+    }
+
+    .switches {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 16px;
+
+      a {
+        border: 2px solid #841844;
+        border-radius: 50px;
+
+        &>* {
+          cursor: pointer;
+          border: none;
+          height: 54px;
+
+          background-color: rgba(0, 0, 0, 0);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 22px;
+          color: #841844;
+        }
+
+        &:hover {
+          background-color: #841844;
+          color: #fff;
+
+          &>* {
+            color: #fff;
+          }
+
+          img {
+            filter: brightness(0) invert(1);
+          }
+        }
+
+        .switch {
+          width: 56px;
+        }
+
+        .switch__prev,
+        .switch__next {
+          padding: 0 40px;
+        }
+
+        .switch__prev {
+          transform: rotate(180deg);
+        }
+      }
+
+      .active {
+        background-color: #841844;
+
+        &>* {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
